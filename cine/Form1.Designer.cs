@@ -32,12 +32,16 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.cb_reduit = new System.Windows.Forms.CheckBox();
+            this.numeroFilm = new System.Windows.Forms.TextBox();
+            this.nbPlace = new System.Windows.Forms.TextBox();
             this.reserveBTN = new System.Windows.Forms.Button();
             this.erreurLabal = new System.Windows.Forms.Label();
+            this.dgv = new System.Windows.Forms.DataGridView();
+            this.ds = new System.Data.DataSet();
             this.achatBillet.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ds)).BeginInit();
             this.SuspendLayout();
             // 
             // achatBillet
@@ -45,9 +49,9 @@
             this.achatBillet.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.achatBillet.Controls.Add(this.erreurLabal);
             this.achatBillet.Controls.Add(this.reserveBTN);
-            this.achatBillet.Controls.Add(this.textBox2);
-            this.achatBillet.Controls.Add(this.textBox1);
-            this.achatBillet.Controls.Add(this.checkBox1);
+            this.achatBillet.Controls.Add(this.nbPlace);
+            this.achatBillet.Controls.Add(this.numeroFilm);
+            this.achatBillet.Controls.Add(this.cb_reduit);
             this.achatBillet.Controls.Add(this.label3);
             this.achatBillet.Controls.Add(this.label2);
             this.achatBillet.Controls.Add(this.label1);
@@ -83,29 +87,29 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Saisir Nombres de Billets:";
             // 
-            // checkBox1
+            // cb_reduit
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(10, 147);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(117, 17);
-            this.checkBox1.TabIndex = 4;
-            this.checkBox1.Text = "Droit au Prix Réduit";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.cb_reduit.AutoSize = true;
+            this.cb_reduit.Location = new System.Drawing.Point(10, 147);
+            this.cb_reduit.Name = "cb_reduit";
+            this.cb_reduit.Size = new System.Drawing.Size(117, 17);
+            this.cb_reduit.TabIndex = 4;
+            this.cb_reduit.Text = "Droit au Prix Réduit";
+            this.cb_reduit.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // numeroFilm
             // 
-            this.textBox1.Location = new System.Drawing.Point(154, 41);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(63, 20);
-            this.textBox1.TabIndex = 5;
+            this.numeroFilm.Location = new System.Drawing.Point(154, 41);
+            this.numeroFilm.Name = "numeroFilm";
+            this.numeroFilm.Size = new System.Drawing.Size(63, 20);
+            this.numeroFilm.TabIndex = 5;
             // 
-            // textBox2
+            // nbPlace
             // 
-            this.textBox2.Location = new System.Drawing.Point(154, 88);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(62, 20);
-            this.textBox2.TabIndex = 6;
+            this.nbPlace.Location = new System.Drawing.Point(154, 88);
+            this.nbPlace.Name = "nbPlace";
+            this.nbPlace.Size = new System.Drawing.Size(62, 20);
+            this.nbPlace.TabIndex = 6;
             // 
             // reserveBTN
             // 
@@ -115,6 +119,7 @@
             this.reserveBTN.TabIndex = 7;
             this.reserveBTN.Text = "Réserver";
             this.reserveBTN.UseVisualStyleBackColor = true;
+            this.reserveBTN.Click += new System.EventHandler(this.ReserveBTN_Click);
             // 
             // erreurLabal
             // 
@@ -125,16 +130,31 @@
             this.erreurLabal.TabIndex = 8;
             this.erreurLabal.Visible = false;
             // 
+            // dgv
+            // 
+            this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv.Location = new System.Drawing.Point(243, 13);
+            this.dgv.Name = "dgv";
+            this.dgv.Size = new System.Drawing.Size(757, 267);
+            this.dgv.TabIndex = 1;
+            // 
+            // ds
+            // 
+            this.ds.DataSetName = "NewDataSet";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1012, 544);
+            this.Controls.Add(this.dgv);
             this.Controls.Add(this.achatBillet);
             this.Name = "Form1";
             this.Text = "Form1";
             this.achatBillet.ResumeLayout(false);
             this.achatBillet.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ds)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -144,12 +164,14 @@
         private System.Windows.Forms.Panel achatBillet;
         private System.Windows.Forms.Label erreurLabal;
         private System.Windows.Forms.Button reserveBTN;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.TextBox nbPlace;
+        private System.Windows.Forms.TextBox numeroFilm;
+        private System.Windows.Forms.CheckBox cb_reduit;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridView dgv;
+        private System.Data.DataSet ds;
     }
 }
 
