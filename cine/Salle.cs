@@ -8,6 +8,7 @@ namespace cine
 {
     public class Salle
     {
+        // attributs privés
         private string film;
         private int nbPlace;
         private double prixNormal;
