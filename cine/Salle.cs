@@ -38,11 +38,13 @@ namespace cine
                 {
                     double prix;
                     prix = nbre * (this.prixNormal * 0.8);
+                    this.placeReduit = this.placeReduit + nbre;
                 }
                 else
                 {
                     double prix;
                     prix = nbre * this.prixNormal;
+                    this.placeNormal = this.placeNormal + nbre;
                 }
                 this.nbPlace = this.nbPlace - nbre;
                 //afficher le prix
@@ -51,6 +53,17 @@ namespace cine
             {
                 //afficher une erreur
             }
+        }
+        public void remiseAZero()
+        {
+            this.placeNormal = 0;
+            this.placeReduit = 0;
+        }
+        public double chiffreAffaire()
+        {
+            double total;
+            total = (placeNormal * prixNormal) + (placeReduit * (prixNormal * 0.80));
+            return total;
         }
     }
 }
