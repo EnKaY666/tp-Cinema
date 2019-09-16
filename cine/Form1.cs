@@ -18,7 +18,7 @@ namespace cine
         {
             InitializeComponent();
             lb.MultiColumn = true;
-            for (int x = 1; x <= ; x++)
+            for (int x=1; x < lesSalles.Count ; x++)
             {
                 lb.Items.Add();
             }
