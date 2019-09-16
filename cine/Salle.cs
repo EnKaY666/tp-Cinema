@@ -82,6 +82,5 @@ namespace cine
             resumer = "Film joué:"+nom+" / Nombre de places:"+place+" / prix d'une place:"+p+" / "+venduNormal+" Place sont vendu à prix Normal / "+venduReduit+" Place sont venduent à prix Réduit";
             return resumer;
         }
-
     }
 }
