@@ -22,5 +22,35 @@ namespace cine
             this.placeNormal = 0;
             this.placeReduit = 0;
         }
+
+        public int nbPlaceDisponible()
+        {
+            int dispo = 0;
+            dispo = this.nbPlace - this.placeReduit - this.placeNormal;
+            return dispo;
+        }
+        public void vendrePlace(int nbre, bool reduit)
+        {
+            this.nbPlace = nbPlaceDisponible();
+            if (this.nbPlace > nbre)
+            {
+                if (reduit == true)
+                {
+                    double prix;
+                    prix = nbre * (this.prixNormal * 0.8);
+                }
+                else
+                {
+                    double prix;
+                    prix = nbre * this.prixNormal;
+                }
+                this.nbPlace = this.nbPlace - nbre;
+                //afficher le prix
+            }
+            else
+            {
+                //afficher une erreur
+            }
+        }
     }
 }
