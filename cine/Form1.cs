@@ -22,8 +22,9 @@ namespace cine
             bool reduit = cb_reduit.Checked;
             int nFilm = Convert.ToInt16(numeroFilm.Text);
             int nPlace = Convert.ToInt16(nbPlace.Text);
-
-            lesSalles[nFilm].vendrePlace(nPlace, reduit);
+            
+            erreurLabal = lesSalles[nFilm].vendrePlace(nPlace, reduit);
+            erreurLabal.Visible = true;
 ;       }
     }
 }

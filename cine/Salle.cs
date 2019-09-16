@@ -29,29 +29,31 @@ namespace cine
             dispo = this.nbPlace - this.placeReduit - this.placeNormal;
             return dispo;
         }
-        public void vendrePlace(int nbre, bool reduit)
+        public string vendrePlace(int nbre, bool reduit)
         {
             this.nbPlace = nbPlaceDisponible();
             if (this.nbPlace > nbre)
             {
+                string achat;
+                double prix;
                 if (reduit == true)
                 {
-                    double prix;
                     prix = nbre * (this.prixNormal * 0.8);
                     this.placeReduit = this.placeReduit + nbre;
                 }
                 else
                 {
-                    double prix;
                     prix = nbre * this.prixNormal;
                     this.placeNormal = this.placeNormal + nbre;
                 }
                 this.nbPlace = this.nbPlace - nbre;
-                //afficher un label avec le prix de la vente
+                achat = "Le prix de votre reservation est de " + prix + "€";
+                return achat;
             }
             else
             {
-                //afficher un label qui indique une erreur de manque de place
+                string erreur = "Achat impossible nobre de place trop élever";
+                return erreur;
             }
         }
         public void remiseAZero()
