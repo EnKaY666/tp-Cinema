@@ -8,19 +8,25 @@ namespace cine
 {
     public class Salle
     {
+        private int id;
         private string film;
         private int nbPlace;
         private double prixNormal;
         private int placeNormal;
         private int placeReduit;
 
-        public Salle(string f, int p, double px)
+        public Salle(string f, int p, double px, int nSalle)
         {
+            this.id = nSalle;
             this.film = f;
             this.nbPlace = p;
             this.prixNormal = px;
             this.placeNormal = 0;
             this.placeReduit = 0;
+        }
+        public int getId()
+        {
+            return this.id;
         }
 
         public int nbPlaceDisponible()

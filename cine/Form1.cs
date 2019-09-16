@@ -12,6 +12,8 @@ namespace cine
 {
     public partial class Form1 : Form
     {
+        List<Salle> lesSalles = new List<Salle>(); // création de la liste
+
         public Form1()
         {
             InitializeComponent();
@@ -23,7 +25,8 @@ namespace cine
             int nFilm = Convert.ToInt16(numeroFilm.Text);
             int nPlace = Convert.ToInt16(nbPlace.Text);
             
-            erreurLabal = lesSalles[nFilm].vendrePlace(nPlace, reduit);
+            for(lesSalles == nFilm)
+            erreurLabal = lesSalles.vendrePlace(nPlace, reduit);
             erreurLabal.Visible = true;
 ;       }
     }
