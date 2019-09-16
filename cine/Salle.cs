@@ -62,8 +62,25 @@ namespace cine
         public double chiffreAffaire()
         {
             double total;
-            total = (placeNormal * prixNormal) + (placeReduit * (prixNormal * 0.80));
+            total = (this.placeNormal * this.prixNormal) + (this.placeReduit * (this.prixNormal * 0.80));
             return total;
+        }
+        public double tauxRemplissage()
+        {
+            double taux;
+            taux = (this.nbPlace * (this.placeNormal + this.placeReduit)) / 100;
+            return taux;
+        }
+        public string toString()
+        {
+            string nom = this.film;
+            int place = this.nbPlace;
+            int venduNormal = this.placeNormal;
+            int venduReduit = this.placeReduit;
+            double p = this.prixNormal;
+            string resumer;
+            resumer = "Film joué:"+nom+" / Nombre de places:"+place+" / prix d'une place:"+p+" / "+venduNormal+" Place sont vendu à prix Normal / "+venduReduit+" Place sont venduent à prix Réduit";
+            return resumer;
         }
     }
 }
