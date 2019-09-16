@@ -47,11 +47,11 @@ namespace cine
                     this.placeNormal = this.placeNormal + nbre;
                 }
                 this.nbPlace = this.nbPlace - nbre;
-                //afficher le prix
+                //afficher un label avec le prix de la vente
             }
             else
             {
-                //afficher une erreur
+                //afficher un label qui indique une erreur de manque de place
             }
         }
         public void remiseAZero()
@@ -82,5 +82,6 @@ namespace cine
             resumer = "Film joué:"+nom+" / Nombre de places:"+place+" / prix d'une place:"+p+" / "+venduNormal+" Place sont vendu à prix Normal / "+venduReduit+" Place sont venduent à prix Réduit";
             return resumer;
         }
+
     }
 }
