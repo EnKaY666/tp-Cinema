@@ -20,7 +20,7 @@ namespace cine
             lb.MultiColumn = true;
             for (int x=1; x < lesSalles.Count ; x++)
             {
-                lb.Items.Add();
+                lb.Items.Add(lesSalles[x]);
             }
         }
 
@@ -29,8 +29,8 @@ namespace cine
             bool reduit = cb_reduit.Checked;
             int nFilm = Convert.ToInt16(numeroFilm.Text);
             int nPlace = Convert.ToInt16(nbPlace.Text);
-            
-            erreurLabal = lesSalles.vendrePlace(nPlace, reduit);
+            string vente = Salle.vendrePlace(nPlace, reduit);
+            erreurLabal.Text = vente;
             erreurLabal.Visible = true;
 ;       }
     }
